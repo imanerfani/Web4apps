@@ -20,4 +20,12 @@ Route::get('/', function () {
     return view('Index');
 });
 
+Route::middleware(['web'])->group(function ()
+{
+    //Route::get('/admin',[\App\Http\Controllers\Admin\Dashboard\DashboardController::class,'index']);
+    Route::get('/admin/dashboard',[App\Http\Controllers\Admin\Dashboard\DashboardController::class,'index']);
+   //Route::get('/admin/userManager/createUser',\App\Http\Livewire\Admin\UserManagement\CreateUser::class);
+    //Route::post('/admin/userManager/addUser',[\App\Http\Livewire\Admin\UserManagement\CreateUser::class],'store')->name('user.add');
+});
+
 
